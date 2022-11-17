@@ -1,0 +1,49 @@
+main {
+    display: flex;
+    background-color: rgb(31, 3, 49);
+    height: 100vh;
+    justify-content: end;
+    background-image: "../../assets/img/logo.png";
+  }
+  
+  .main-container {
+    display: flex;
+    background-color: #c10003;
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    border-left: solid 1px rgba(0, 0, 0, 0.121);
+    box-shadow: -16px 2px 27px -3px rgba(0, 0, 0, 0.39);
+    align-items: center;
+  }
+  
+  .login-container {
+    color: #fffff7;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 400px;
+  }
+  
+  @media (max-width: 900px) {
+    main {
+      justify-content: center;
+      align-items: center;
+    }
+    .main-container {
+      width: 22rem;
+      height: 80%;
+      border-radius: 10px;
+      background-color: #1b1b1b;
+    }
+    .name {
+      text-align: center;
+    }
+    input::placeholder {
+      text-align: center;
+    }
+  }
+  
