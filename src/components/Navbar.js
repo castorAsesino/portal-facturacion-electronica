@@ -19,6 +19,7 @@ import Logo from "../assets/img/logomo.png";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import { useTheme } from '@mui/material/styles';
 
 const pages = ['', '', ''];
 const settings = ['Cerrar Sesión'];
@@ -26,6 +27,7 @@ const settings = ['Cerrar Sesión'];
 function Navbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const theme = useTheme();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -48,7 +50,7 @@ function Navbar() {
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                        <img src={Logo} alt="" sx={{ display: { xs: 'none', md: 'flex' }, mr: 5 }}/>
+                        <img src={theme.status.imgNavbar} alt="logo-navbar" sx={{ display: { xs: 'none', md: 'flex' }, mr: 5 }}/>
                         {/* <Typography
                             variant="h6"
                             noWrap
