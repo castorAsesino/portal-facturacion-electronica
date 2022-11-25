@@ -29,7 +29,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "./login.scss"
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
-
+import { signup } from "../../service/auth.service"
 
 
 
@@ -39,8 +39,11 @@ export default function Login() {
     const theme = useTheme();
 
     const [values, setValues] = React.useState({
+        username: '',
+        password: '',
         showPassword: false,
     });
+    
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -56,6 +59,14 @@ export default function Login() {
         event.preventDefault();
     };
 
+    const submit = (event) => {
+        event.preventDefault();
+        console.log(values);
+        signup(values.username, values.password)
+        .then((response) => {
+            console.log(response)
+        });
+    };
 
     return (
         <>
@@ -87,6 +98,8 @@ export default function Login() {
                                         id="standard-basic"
                                         label="Usuario"
                                         variant="outlined"
+                                        value={values.username}
+                                        onChange={handleChange('username')}
                                     />
                                 </FormControl>
 
@@ -118,7 +131,7 @@ export default function Login() {
                                     loading={false}
                                     type='submit'
                                     variant='contained'
-                                    onClick={() => navigate('/facturacion')}
+                                    onClick={submit}
                                     sx={{
                                         py: '0.8rem',
                                         mt: 2,
