@@ -19,7 +19,6 @@
 # EXPOSE 80
 # # Start nginx
 # CMD ["nginx", "-g", "daemon off;"]
-FROM node:latest
 FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY /build/  /usr/share/nginx/html
